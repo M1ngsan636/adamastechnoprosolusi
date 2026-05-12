@@ -8,11 +8,51 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-// Sub-component for background
+// Sub-components for high-tech feel
 const VisualCore = () => (
-  <div className="absolute inset-0 pointer-events-none opacity-20">
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#ffffff10_0%,transparent_50%)]" />
-    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+  <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#22d3ee10_0%,transparent_70%)]" />
+    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent shadow-[0_0_15px_rgba(34,211,238,0.5)]" />
+    {/* Scanning Line */}
+    <motion.div 
+      animate={{ top: ['0%', '100%'] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+      className="absolute left-0 w-full h-[2px] bg-cyan-400/20 shadow-[0_0_20px_rgba(34,211,238,0.3)] z-10"
+    />
+  </div>
+);
+
+const HUDOverlay = () => (
+  <div className="absolute inset-0 pointer-events-none p-6 flex flex-col justify-between text-[8px] font-mono uppercase tracking-[0.2em] text-cyan-400/40 z-20">
+    <div className="flex justify-between">
+      <div className="flex flex-col gap-1">
+        <div>SYS_PORTAL // INFRA_V2.0</div>
+        <div>COORDS: 06°11'30"S 106°44'25"E</div>
+      </div>
+      <div className="flex flex-col items-end gap-1">
+        <div className="flex gap-2">
+          <div className="w-1 h-1 bg-cyan-400 animate-pulse" />
+          <span>NETWORK_STABLE</span>
+        </div>
+        <div>UPTIME: 99.998%</div>
+      </div>
+    </div>
+    <div className="flex justify-between items-end">
+      <div className="flex flex-col gap-1">
+        <div>ENCRYPT_LAYER: AES-256</div>
+        <div>SIGNAL_LOCK: TRUE</div>
+      </div>
+      <div className="flex flex-col items-end gap-1">
+        <div className="w-24 h-[1px] bg-cyan-400/20 relative">
+          <motion.div 
+            animate={{ left: ['0%', '100%'] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="absolute top-0 w-4 h-full bg-cyan-400/40"
+          />
+        </div>
+        <div>ADAMAS_CORE_CORE_SYNC</div>
+      </div>
+    </div>
   </div>
 );
 
@@ -72,28 +112,44 @@ export default function PremiumTechV2Template() {
             {/* Hero Section */}
             <section className="relative h-[85vh] flex items-center overflow-hidden border-b border-white/5">
               <VisualCore />
-              <div className="absolute left-12 top-24 text-[120px] font-black italic text-white/[0.02] leading-none select-none">01</div>
+              <HUDOverlay />
+              <div className="absolute left-12 top-24 text-[120px] font-black italic text-cyan-400/[0.03] leading-none select-none">01</div>
               <div className="relative z-10 px-6 md:px-12 max-w-7xl mx-auto w-full grid grid-cols-12 gap-8 items-center">
                 <div className="col-span-12 md:col-span-8">
                   <h2 className="text-[10px] font-bold uppercase tracking-[0.4em] text-stone-500 mb-8">Executive Tech Ecosystems</h2>
                   <h1 className="text-5xl md:text-8xl font-light italic leading-[0.9] text-white mb-12">
-                    Engineering<br /><span className="font-black not-italic">Futures.</span>
+                    Engineering<br /><span className="font-black not-italic text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-400 to-white/50">Futures.</span>
                   </h1>
                   <p className="max-w-md text-sm leading-relaxed text-stone-400 border-l border-white/20 pl-6 mb-12">
                     Specializing in high-performance AV architecture and mission-critical IT integration for global corporate leaders. Delivering precision, reliability, and technical integrity.
                   </p>
                   <div className="flex gap-6">
-                    <button onClick={() => setActiveTab('solutions')} className="bg-white text-black px-10 py-4 text-[10px] font-black uppercase tracking-widest hover:bg-stone-200 transition-all">Explore</button>
-                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all cursor-pointer">
+                    <motion.button 
+                      whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(34,211,238,0.3)" }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setActiveTab('solutions')} 
+                      className="bg-white text-black px-10 py-4 text-[10px] font-black uppercase tracking-widest hover:bg-cyan-400 transition-all border border-transparent"
+                    >
+                      Explore
+                    </motion.button>
+                    <motion.div 
+                      whileHover={{ rotate: 90, borderColor: "#22d3ee" }}
+                      className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/5 hover:text-cyan-400 transition-all cursor-pointer"
+                    >
                       <ArrowRight size={20} />
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
-                <div className="hidden md:flex col-span-4 flex-col gap-6 items-end">
-                  <div className="w-full aspect-[4/5] border border-white/10 bg-stone-900 p-2 grayscale hover:grayscale-0 transition-all duration-1000">
-                     <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover opacity-50" />
+                <div className="hidden md:flex col-span-4 flex-col gap-6 items-end relative">
+                  <div className="w-full aspect-[4/5] border border-cyan-400/20 bg-stone-900 p-2 grayscale hover:grayscale-0 transition-all duration-1000 relative group">
+                     <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover opacity-30 group-hover:opacity-60 transition-opacity" />
+                     {/* Corner Brackets */}
+                     <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-cyan-400/50" />
+                     <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-cyan-400/50" />
+                     <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-cyan-400/50" />
+                     <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-cyan-400/50" />
                   </div>
-                  <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-stone-600 italic">Infra Engineering / 2024</span>
+                  <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-cyan-400/60 italic">Infra Engineering / 2024</span>
                 </div>
               </div>
             </section>

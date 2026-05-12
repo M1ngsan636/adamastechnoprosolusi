@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Monitor, Rocket, Zap, Cpu, Building2 } from 'lucide-react';
+import { Monitor, Rocket, Zap, Cpu, Building2, Layout, Shield, Chrome } from 'lucide-react';
 import { TemplateType } from '../types';
 import { cn } from '../lib/utils';
 
@@ -38,6 +38,27 @@ const templates: { id: TemplateType; title: string; description: string; icon: a
     description: 'A classic, clean, and trustworthy business layout with high integrity.',
     icon: Building2,
     color: 'bg-blue-900 border-blue-800'
+  },
+  {
+    id: 'minimal-professional',
+    title: 'Light Professional',
+    description: 'Clean, airy, and high-trust aesthetic with a corporate focus.',
+    icon: Layout,
+    color: 'bg-white border-zinc-200 !text-zinc-900'
+  },
+  {
+    id: 'premium-v1',
+    title: 'Premium Tech V1',
+    description: 'Dark, cinematic, and high-precision technical integration focus.',
+    icon: Shield,
+    color: 'bg-black border-cyan-900'
+  },
+  {
+    id: 'premium-v2',
+    title: 'Premium Tech V2',
+    description: 'Editorial-style layout with high-performance AV architecture focus.',
+    icon: Chrome,
+    color: 'bg-zinc-950 border-zinc-800'
   }
 ];
 
@@ -70,19 +91,19 @@ export default function Onboarding({ onSelect }: { onSelect: (t: TemplateType) =
               className={cn(
                 "p-8 rounded-3xl border text-left transition-all group overflow-hidden relative",
                 t.color,
-                t.id === 'sophisticated' ? 'text-stone-900' : 'text-white'
+                (t.id === 'sophisticated' || t.id === 'minimal-professional') ? 'text-stone-900' : 'text-white'
               )}
             >
               <div className={cn(
                 "w-12 h-12 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:rotate-12",
-                t.id === 'sophisticated' ? 'bg-stone-200' : 'bg-white/10'
+                (t.id === 'sophisticated' || t.id === 'minimal-professional') ? 'bg-zinc-100 border border-zinc-200 shadow-sm' : 'bg-white/10'
               )}>
                 <t.icon size={24} />
               </div>
               <h3 className="text-xl font-bold mb-2">{t.title}</h3>
               <p className={cn(
                 "text-sm leading-relaxed mb-8",
-                t.id === 'sophisticated' ? 'text-stone-600' : 'text-zinc-400'
+                (t.id === 'sophisticated' || t.id === 'minimal-professional') ? 'text-zinc-600' : 'text-zinc-400'
               )}>
                 {t.description}
               </p>

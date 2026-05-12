@@ -11,12 +11,24 @@ import ImmersiveTemplate from './components/Templates/Immersive';
 import BoldTemplate from './components/Templates/Bold';
 import SophisticatedTemplate from './components/Templates/Sophisticated';
 import CorporateTemplate from './components/Templates/Corporate';
+import MinimalProfessionalTemplate from './components/Templates/MinimalProfessional';
+import PremiumTechV1Template from './components/Templates/PremiumTechV1';
+import PremiumTechV2Template from './components/Templates/PremiumTechV2';
 import WebGLBackground from './components/WebGLBackground';
 import { motion, AnimatePresence } from 'motion/react';
 import { Settings2 } from 'lucide-react';
 
 export default function App() {
   const [template, setTemplate] = useState<TemplateType | null>(() => {
+    // 1. Check URL parameters first (e.g., ?template=corporate)
+    const params = new URLSearchParams(window.location.search);
+    const templateParam = params.get('template') as TemplateType;
+    if (templateParam && ['minimal', 'immersive', 'bold', 'sophisticated', 'corporate', 'minimal-professional', 'premium-v1', 'premium-v2'].includes(templateParam)) {
+      localStorage.setItem('adamas_template', templateParam);
+      return templateParam;
+    }
+    
+    // 2. Check localStorage
     const saved = localStorage.getItem('adamas_template');
     return (saved as TemplateType) || null;
   });
@@ -41,6 +53,9 @@ export default function App() {
       case 'bold': return <BoldTemplate />;
       case 'sophisticated': return <SophisticatedTemplate />;
       case 'corporate': return <CorporateTemplate />;
+      case 'minimal-professional': return <MinimalProfessionalTemplate />;
+      case 'premium-v1': return <PremiumTechV1Template />;
+      case 'premium-v2': return <PremiumTechV2Template />;
       default: return <MinimalTemplate />;
     }
   };
@@ -81,7 +96,7 @@ export default function App() {
               className="absolute bottom-16 right-0 bg-zinc-900 border border-white/10 p-4 rounded-2xl shadow-3xl w-48 space-y-2"
             >
               <div className="text-[10px] uppercase tracking-widest text-zinc-500 px-2 mb-2 font-bold">Switch Vibe</div>
-              {(['minimal', 'immersive', 'bold', 'sophisticated', 'corporate'] as TemplateType[]).map((t) => (
+              {(['minimal', 'immersive', 'bold', 'sophisticated', 'corporate', 'minimal-professional', 'premium-v1', 'premium-v2'] as TemplateType[]).map((t) => (
                 <button
                   key={t}
                   onClick={() => setTemplate(t)}

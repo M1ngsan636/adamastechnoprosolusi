@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Monitor, Rocket, Zap, Cpu } from 'lucide-react';
+import { Monitor, Rocket, Zap, Cpu, Building2 } from 'lucide-react';
 import { TemplateType } from '../types';
 import { cn } from '../lib/utils';
 
@@ -31,6 +31,13 @@ const templates: { id: TemplateType; title: string; description: string; icon: a
     description: 'High-energy tech aesthetic with neon accents and fast-paced digital rhythms.',
     icon: Cpu,
     color: 'bg-zinc-950 border-cyan-500/30'
+  },
+  {
+    id: 'corporate',
+    title: 'Professional Corporate',
+    description: 'A classic, clean, and trustworthy business layout with high integrity.',
+    icon: Building2,
+    color: 'bg-blue-900 border-blue-800'
   }
 ];
 

@@ -1,4 +1,4 @@
-export type TemplateType = 'minimal' | 'immersive' | 'bold' | 'sophisticated';
+export type TemplateType = 'minimal' | 'immersive' | 'bold' | 'sophisticated' | 'corporate';
 
 export interface Service {
   id: string;

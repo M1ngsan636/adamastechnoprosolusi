@@ -10,6 +10,7 @@ import MinimalTemplate from './components/Templates/Minimal';
 import ImmersiveTemplate from './components/Templates/Immersive';
 import BoldTemplate from './components/Templates/Bold';
 import SophisticatedTemplate from './components/Templates/Sophisticated';
+import CorporateTemplate from './components/Templates/Corporate';
 import WebGLBackground from './components/WebGLBackground';
 import { motion, AnimatePresence } from 'motion/react';
 import { Settings2 } from 'lucide-react';
@@ -39,6 +40,7 @@ export default function App() {
       case 'immersive': return <ImmersiveTemplate />;
       case 'bold': return <BoldTemplate />;
       case 'sophisticated': return <SophisticatedTemplate />;
+      case 'corporate': return <CorporateTemplate />;
       default: return <MinimalTemplate />;
     }
   };
@@ -79,7 +81,7 @@ export default function App() {
               className="absolute bottom-16 right-0 bg-zinc-900 border border-white/10 p-4 rounded-2xl shadow-3xl w-48 space-y-2"
             >
               <div className="text-[10px] uppercase tracking-widest text-zinc-500 px-2 mb-2 font-bold">Switch Vibe</div>
-              {(['minimal', 'immersive', 'bold', 'sophisticated'] as TemplateType[]).map((t) => (
+              {(['minimal', 'immersive', 'bold', 'sophisticated', 'corporate'] as TemplateType[]).map((t) => (
                 <button
                   key={t}
                   onClick={() => setTemplate(t)}

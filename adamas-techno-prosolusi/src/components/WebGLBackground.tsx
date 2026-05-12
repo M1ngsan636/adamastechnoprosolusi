@@ -82,10 +82,11 @@ export default function WebGLBackground({ template = 'minimal' }: { template?: s
     minimal: "#000000",
     immersive: "#050505",
     bold: "#0d0121",
-    sophisticated: "#020617"
+    sophisticated: "#020617",
+    corporate: "#ffffff"
   };
 
-  const starColor = template === 'sophisticated' ? '#22d3ee' : (template === 'bold' ? '#a78bfa' : '#fff');
+  const starColor = template === 'sophisticated' ? '#22d3ee' : (template === 'bold' ? '#a78bfa' : (template === 'corporate' ? '#3b82f6' : '#fff'));
 
   return (
     <div className="fixed inset-0 -z-10 bg-current transition-colors duration-1000" style={{ color: colors[template] || colors.minimal }}>

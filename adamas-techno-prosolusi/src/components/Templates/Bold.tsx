@@ -48,7 +48,7 @@ export default function CharismaticTemplate() {
             >
               The New Standard of IT Integration
             </motion.div>
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -57,7 +57,7 @@ export default function CharismaticTemplate() {
               Magnetic <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-200">Intelligence.</span>
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -75,8 +75,8 @@ export default function CharismaticTemplate() {
               </button>
             </div>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
@@ -85,9 +85,9 @@ export default function CharismaticTemplate() {
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-cyan-600/30 blur-[100px] -z-10" />
             <div className="aspect-square bg-white/5 backdrop-blur-3xl rounded-[60px] border border-white/10 p-4 relative overflow-hidden group">
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-              <img 
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000" 
-                className="w-full h-full object-cover rounded-[44px] transition-transform duration-1000 group-hover:scale-105" 
+              <img
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000"
+                className="w-full h-full object-cover rounded-[44px] transition-transform duration-1000 group-hover:scale-105"
                 alt="Cyber Background"
               />
               <div className="absolute bottom-10 left-10 p-6 bg-black/60 backdrop-blur-md border border-white/10 rounded-3xl max-w-[200px]">
@@ -110,7 +110,7 @@ export default function CharismaticTemplate() {
             {COMPANY_DATA.services.map((service, i) => {
               const Icon = iconMap[service.icon];
               return (
-                <motion.div 
+                <motion.div
                   key={service.id}
                   whileHover={{ y: -10 }}
                   className="group p-10 bg-white/5 border border-white/10 rounded-[40px] hover:bg-blue-600/10 hover:border-blue-600/30 transition-all"
@@ -141,10 +141,10 @@ export default function CharismaticTemplate() {
             {COMPANY_DATA.projects.map((project, i) => (
               <div key={project.id} className="group cursor-pointer">
                 <div className="aspect-[4/5] bg-white/5 border border-white/10 rounded-[40px] overflow-hidden mb-8">
-                  <img 
-                    src={project.image} 
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                    alt={project.title} 
+                  <img
+                    src={project.image}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    alt={project.title}
                   />
                 </div>
                 <h4 className="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">{project.title}</h4>
@@ -204,7 +204,7 @@ export default function CharismaticTemplate() {
           <div className="flex gap-8 text-[10px] text-white/40 uppercase tracking-widest font-bold">
             <a href="#" className="hover:text-white transition-colors">Twitter</a>
             <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-white transition-colors">GitHub</a>
+            <a href="#" className="hover:text-white transition-colors">Instagram</a>
           </div>
         </div>
       </footer>

@@ -23,7 +23,7 @@ export default function CharismaticTemplate() {
         <div className="max-w-7xl mx-auto flex justify-between items-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl px-8 py-4">
           <div className="flex items-center gap-3">
             <div className="bg-white/95 px-3 py-1.5 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
-              <img src="/adamas-logo.png" alt="Adamas Logo" className="h-8 object-contain" />
+              <img src="./adamas-logo.png" alt="Adamas Logo" className="h-8 object-contain" />
             </div>
           </div>
           <div className="hidden md:flex gap-10 text-sm font-medium text-white/60">
@@ -195,7 +195,7 @@ export default function CharismaticTemplate() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="flex items-center gap-3">
             <div className="bg-white/95 px-3 py-1.5 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
-              <img src="/adamas-logo.png" alt="Adamas Logo" className="h-6 object-contain" />
+              <img src="./adamas-logo.png" alt="Adamas Logo" className="h-6 object-contain" />
             </div>
           </div>
           <p className="text-white/20 text-xs tracking-widest uppercase">

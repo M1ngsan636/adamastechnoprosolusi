@@ -85,10 +85,13 @@ export default function CharismaticTemplate() {
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-cyan-600/30 blur-[100px] -z-10" />
             <div className="aspect-square bg-white/5 backdrop-blur-3xl rounded-[60px] border border-white/10 p-4 relative overflow-hidden group">
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-              <img
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000"
+              <video
+                src="./hero-video.mp4"
                 className="w-full h-full object-cover rounded-[44px] transition-transform duration-1000 group-hover:scale-105"
-                alt="Cyber Background"
+                autoPlay
+                loop
+                muted
+                playsInline
               />
               <div className="absolute bottom-10 left-10 p-6 bg-black/60 backdrop-blur-md border border-white/10 rounded-3xl max-w-[200px]">
                 <div className="text-blue-400 font-bold mb-1">99.9%</div>

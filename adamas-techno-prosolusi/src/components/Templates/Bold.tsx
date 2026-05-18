@@ -12,27 +12,26 @@ const iconMap: Record<string, any> = {
 
 export default function CharismaticTemplate() {
   return (
-    <div className="text-white selection:bg-violet-500/30 overflow-x-hidden font-sans">
+    <div className="text-white selection:bg-blue-500/30 overflow-x-hidden font-sans">
       {/* Dynamic Aura Background */}
-      <div className="fixed inset-0 -z-10 bg-[#0d0121]">
-        <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-violet-600/10 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-[60%] h-[60%] bg-indigo-600/10 blur-[120px] rounded-full" />
+      <div className="fixed inset-0 -z-10 bg-black">
+        <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-blue-600/20 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-[60%] h-[60%] bg-cyan-600/20 blur-[120px] rounded-full" />
       </div>
 
       <nav className="fixed top-0 w-full z-50 p-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl px-8 py-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-tr from-violet-600 to-indigo-600 rounded-xl rotate-12 flex items-center justify-center shadow-lg shadow-violet-500/20">
-              <Zap size={20} className="text-white fill-white" />
+            <div className="bg-white/95 px-3 py-1.5 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+              <img src="/adamas-logo.png" alt="Adamas Logo" className="h-8 object-contain" />
             </div>
-            <span className="text-2xl font-display font-bold tracking-tight">ADAMAS</span>
           </div>
           <div className="hidden md:flex gap-10 text-sm font-medium text-white/60">
-            <a href="#services" className="hover:text-violet-400 transition-colors">Expertise</a>
-            <a href="#projects" className="hover:text-violet-400 transition-colors">Innovations</a>
-            <a href="#about" className="hover:text-violet-400 transition-colors">Company</a>
+            <a href="#services" className="hover:text-blue-400 transition-colors">Expertise</a>
+            <a href="#projects" className="hover:text-blue-400 transition-colors">Innovations</a>
+            <a href="#about" className="hover:text-blue-400 transition-colors">Company</a>
           </div>
-          <button className="bg-violet-600 hover:bg-violet-500 text-white px-6 py-2.5 rounded-xl font-bold transition-all shadow-lg shadow-violet-600/20 active:scale-95">
+          <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-xl font-bold transition-all shadow-lg shadow-blue-600/20 active:scale-95">
             Connect Now
           </button>
         </div>
@@ -45,7 +44,7 @@ export default function CharismaticTemplate() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-300 text-sm font-medium mb-8"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-sm font-medium mb-8"
             >
               The New Standard of IT Integration
             </motion.div>
@@ -56,7 +55,7 @@ export default function CharismaticTemplate() {
               className="text-6xl md:text-8xl font-display font-bold leading-[1.1] tracking-tight mb-8"
             >
               Magnetic <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-indigo-400 to-cyan-400">Intelligence.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-200">Intelligence.</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -83,16 +82,16 @@ export default function CharismaticTemplate() {
             transition={{ delay: 0.4 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-violet-600/30 to-cyan-600/30 blur-[100px] -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-cyan-600/30 blur-[100px] -z-10" />
             <div className="aspect-square bg-white/5 backdrop-blur-3xl rounded-[60px] border border-white/10 p-4 relative overflow-hidden group">
-              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
               <img 
                 src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000" 
                 className="w-full h-full object-cover rounded-[44px] transition-transform duration-1000 group-hover:scale-105" 
                 alt="Cyber Background"
               />
               <div className="absolute bottom-10 left-10 p-6 bg-black/60 backdrop-blur-md border border-white/10 rounded-3xl max-w-[200px]">
-                <div className="text-violet-400 font-bold mb-1">99.9%</div>
+                <div className="text-blue-400 font-bold mb-1">99.9%</div>
                 <div className="text-[10px] text-white/40 uppercase tracking-widest font-bold">Uptime Integration</div>
               </div>
             </div>
@@ -114,10 +113,10 @@ export default function CharismaticTemplate() {
                 <motion.div 
                   key={service.id}
                   whileHover={{ y: -10 }}
-                  className="group p-10 bg-white/5 border border-white/10 rounded-[40px] hover:bg-violet-600/10 hover:border-violet-600/30 transition-all"
+                  className="group p-10 bg-white/5 border border-white/10 rounded-[40px] hover:bg-blue-600/10 hover:border-blue-600/30 transition-all"
                 >
-                  <div className="w-16 h-16 bg-violet-600/20 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-violet-600 transition-colors">
-                    <Icon size={32} className="text-violet-400 group-hover:text-white" />
+                  <div className="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors">
+                    <Icon size={32} className="text-blue-400 group-hover:text-white" />
                   </div>
                   <h3 className="text-3xl font-display font-bold mb-4">{service.title}</h3>
                   <p className="text-white/40 leading-relaxed font-light">{service.description}</p>
@@ -148,7 +147,7 @@ export default function CharismaticTemplate() {
                     alt={project.title} 
                   />
                 </div>
-                <h4 className="text-2xl font-bold mb-2 group-hover:text-violet-400 transition-colors">{project.title}</h4>
+                <h4 className="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">{project.title}</h4>
                 <div className="text-sm font-medium text-white/30 uppercase tracking-[0.2em]">{project.category}</div>
               </div>
             ))}
@@ -170,16 +169,16 @@ export default function CharismaticTemplate() {
               </p>
               <div className="grid grid-cols-2 gap-12 border-b border-white/10 pb-12 mb-12">
                 <div>
-                  <div className="text-violet-400 font-bold mb-4 uppercase text-xs tracking-widest">Our Mission</div>
+                  <div className="text-blue-400 font-bold mb-4 uppercase text-xs tracking-widest">Our Mission</div>
                   <p className="text-sm leading-relaxed text-white/70">{COMPANY_DATA.mission}</p>
                 </div>
                 <div>
-                  <div className="text-violet-400 font-bold mb-4 uppercase text-xs tracking-widest">Our Vision</div>
+                  <div className="text-blue-400 font-bold mb-4 uppercase text-xs tracking-widest">Our Vision</div>
                   <p className="text-sm leading-relaxed text-white/70">{COMPANY_DATA.vision}</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-full border border-violet-500/50 flex items-center justify-center text-violet-400">
+                <div className="w-12 h-12 rounded-full border border-blue-500/50 flex items-center justify-center text-blue-400">
                   <Zap size={24} />
                 </div>
                 <div>
@@ -195,8 +194,9 @@ export default function CharismaticTemplate() {
       <footer className="py-20 px-8 border-t border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="flex items-center gap-3">
-            <Zap size={24} className="text-violet-500" />
-            <span className="text-xl font-display font-bold tracking-tight">ADAMAS</span>
+            <div className="bg-white/95 px-3 py-1.5 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+              <img src="/adamas-logo.png" alt="Adamas Logo" className="h-6 object-contain" />
+            </div>
           </div>
           <p className="text-white/20 text-xs tracking-widest uppercase">
             &copy; 2026 Adamas Techno Prosolusi &bull; Redefining Tech Logic

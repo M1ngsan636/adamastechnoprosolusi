@@ -99,7 +99,15 @@ export default function App() {
               {(['minimal', 'immersive', 'bold', 'sophisticated', 'corporate', 'minimal-professional', 'premium-v1', 'premium-v2'] as TemplateType[]).map((t) => (
                 <button
                   key={t}
-                  onClick={() => setTemplate(t)}
+                  onClick={() => {
+                    if (t === 'corporate') {
+                      window.location.href = 'https://m1ngsan636.github.io/adamascorporate/#';
+                    } else if (t === 'bold') {
+                      window.location.href = 'https://m1ngsan636.github.io/adamasbold/';
+                    } else {
+                      setTemplate(t);
+                    }
+                  }}
                   className={`w-full text-left px-4 py-2 rounded-lg text-sm transition-colors ${template === t ? 'bg-white/10 text-white' : 'text-zinc-400 hover:text-white hover:bg-white/5'}`}
                 >
                   {t.charAt(0).toUpperCase() + t.slice(1)}

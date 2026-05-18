@@ -87,7 +87,15 @@ export default function Onboarding({ onSelect }: { onSelect: (t: TemplateType) =
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              onClick={() => onSelect(t.id)}
+              onClick={() => {
+                if (t.id === 'corporate') {
+                  window.location.href = 'https://m1ngsan636.github.io/adamascorporate/#';
+                } else if (t.id === 'bold') {
+                  window.location.href = 'https://m1ngsan636.github.io/adamasbold/';
+                } else {
+                  onSelect(t.id);
+                }
+              }}
               className={cn(
                 "p-8 rounded-3xl border text-left transition-all group overflow-hidden relative",
                 t.color,
